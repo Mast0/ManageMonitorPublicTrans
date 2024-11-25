@@ -14,7 +14,7 @@ namespace DAL.Interfaces
 
 		Task<TEntity> GetAsync(int id);
 
-		Task<ICollection<TEntity>> GetAllAsync();
+		Task<IEnumerable<TEntity>> GetAllAsync();
 
 		Task UpdateAsync(TEntity entity);
 

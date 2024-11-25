@@ -11,6 +11,6 @@ namespace DAL.Interfaces
 	{
 		Task<Route> GetWithDetailsAsync(int id);
 
-		Task<ICollection<Route>> GetAllWitchDetails();
+		Task<IEnumerable<Route>> GetAllWitchDetails();
 	}
 }

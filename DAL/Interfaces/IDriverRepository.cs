@@ -13,6 +13,6 @@ namespace DAL.Interfaces
 
 		Task<Driver> GetWithDetailsAsync(int id);
 
-		Task<ICollection<Driver>> GetAllWitchDetails();
+		Task<IEnumerable<Driver>> GetAllWitchDetails();
 	}
 }

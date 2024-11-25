@@ -11,6 +11,6 @@ namespace DAL.Interfaces
 	{
 		Task<Schedule> GetWithDetailsAsync(int id);
 
-		Task<ICollection<Schedule>> GetAllWitchDetails();
+		Task<IEnumerable<Schedule>> GetAllWitchDetails();
 	}
 }
