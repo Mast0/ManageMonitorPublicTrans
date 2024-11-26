@@ -27,7 +27,11 @@ namespace DAL.EF
         {
         }
 
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
+        public MMPTContext()
+        {
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<Coordinates>()
 				.HasKey(c => c.Id);
