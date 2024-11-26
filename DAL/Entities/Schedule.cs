@@ -13,5 +13,7 @@ namespace Data.Entites
 		public DateTime StartTime { get; set; }
 
 		public DateTime EndTime { get; set; }
+
+		public IEnumerable<Route> Routes { get; set; }
 	}
 }

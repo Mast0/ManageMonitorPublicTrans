@@ -13,5 +13,9 @@ namespace Data.Entites
 		public double Latitude { get; set; }
 
 		public double Longitude { get; set; }
+
+		public IEnumerable<Vechicle> Vechicles { get; set; }
+
+		public IEnumerable<RoutePoint> RoutePoints { get; set; }
 	}
 }

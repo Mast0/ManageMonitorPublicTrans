@@ -13,5 +13,7 @@ namespace Data.Entites
 		public int ScheduleId { get; set; }
 
 		public Schedule Schedule { get; set; }
+
+		public IEnumerable<Vechicle> Vechicles { get; set; }
 	}
 }

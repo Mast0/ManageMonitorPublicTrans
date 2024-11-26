@@ -10,8 +10,14 @@ namespace Data.Entites
 	{
 		public int Id { get; set; }
 
+		public int CoordinateId { get; set; }
+
 		public Coordinates Coordinate { get; set; }
 
 		public DateTime TimeStamp { get; set; }
+
+		public int VechicleId { get; set; }
+
+		public Vechicle Vechicle { get; set; }
 	}
 }

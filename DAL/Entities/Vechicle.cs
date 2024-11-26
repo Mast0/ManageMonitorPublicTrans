@@ -21,5 +21,7 @@ namespace Data.Entites
 		public Route Route { get; set; }
 
 		public IEnumerable<RoutePoint> History { get; set; }
+
+		public IEnumerable<Driver> Drivers { get; set; }
 	}
 }

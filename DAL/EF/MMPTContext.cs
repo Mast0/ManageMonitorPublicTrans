@@ -26,5 +26,56 @@ namespace DAL.EF
 			: base(opt)
         {
         }
-    }
+
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			modelBuilder.Entity<Coordinates>()
+				.HasKey(c => c.Id);
+
+			modelBuilder.Entity<Driver>()
+				.HasKey(d => d.Id);
+
+			modelBuilder.Entity<Driver>()
+				.HasOne(d => d.Vechicle)
+				.WithMany()
+				.HasForeignKey(d => d.VechicleId);
+
+			modelBuilder.Entity<Route>()
+				.HasKey(r => r.Id);
+
+			modelBuilder.Entity<Route>()
+				.HasOne(r => r.Schedule)
+				.WithMany()
+				.HasForeignKey(r => r.ScheduleId);
+
+			modelBuilder.Entity<RoutePoint>()
+				.HasKey(rp => rp.Id);
+
+			modelBuilder.Entity<RoutePoint>()
+				.HasOne(rp => rp.Coordinate)
+				.WithMany()
+				.HasForeignKey(rp => rp.CoordinateId);
+
+			modelBuilder.Entity<RoutePoint>()
+				.HasOne(rp => rp.Vechicle)
+				.WithMany()
+				.HasForeignKey(rp => rp.VechicleId);
+
+			modelBuilder.Entity<Schedule>()
+				.HasKey(s => s.Id);
+
+			modelBuilder.Entity<Vechicle>()
+				.HasKey(v => v.Id);
+
+			modelBuilder.Entity<Vechicle>()
+				.HasOne(v => v.Location)
+				.WithMany()
+				.HasForeignKey(v => v.LocationId);
+
+			modelBuilder.Entity<Vechicle>()
+				.HasOne(v => v.Route)
+				.WithMany()
+				.HasForeignKey(v => v.RouteId);
+		}
+	}
 }
