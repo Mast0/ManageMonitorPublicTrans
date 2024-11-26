@@ -9,7 +9,7 @@ namespace DAL.Interfaces
 {
 	public interface IDriverRepository : IRepository<Driver>
 	{
-		Task<Driver> GetByVechicleIdAsync(int id);
+		Task<Driver> GetByVechicleIdAsync(int vechicleId);
 
 		Task<Driver> GetWithDetailsAsync(int id);
 

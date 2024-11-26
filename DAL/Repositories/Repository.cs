@@ -1,4 +1,5 @@
 ﻿using DAL.EF;
+using Data.Entites;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,26 @@ namespace DAL.Repositories
 			return await DbSet.FindAsync(id);
 		}
 
-		public async Task
-    }
+		public async Task<IEnumerable<T>> GetAllAsync()
+		{
+			return await DbSet.ToListAsync();
+		}
+
+		public async Task UpdateAsync(T entity)
+		{
+			DbSet.Update(entity);
+			await Context.SaveChangesAsync();
+		}
+
+		public async Task DeleteAsync(int id)
+		{
+			var entity = await this.DbSet.FindAsync(id);
+			if (entity != null)
+			{
+				this.DbSet.Remove(entity);
+				await this.Context.SaveChangesAsync();
+			}
+		}
+
+	}
 }

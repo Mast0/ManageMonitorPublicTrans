@@ -7,10 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Interfaces
 {
-	public interface ISchedule : IRepository<Schedule>
+	public interface IScheduleRepository : IRepository<Schedule>
 	{
-		Task<Schedule> GetWithDetailsAsync(int id);
-
-		Task<IEnumerable<Schedule>> GetAllWitchDetails();
 	}
 }

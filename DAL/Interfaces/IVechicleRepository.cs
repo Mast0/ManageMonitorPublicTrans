@@ -10,8 +10,8 @@ namespace DAL.Interfaces
 {
 	public interface IVechicleRepository : IRepository<Vechicle>
 	{
-		Task<Route> GetWithDetailsAsync(int id);
+		Task<Vechicle> GetWithDetailsAsync(int id);
 
-		Task<IEnumerable<Route>> GetAllWitchDetails();
+		Task<IEnumerable<Vechicle>> GetAllWitchDetails();
 	}
 }

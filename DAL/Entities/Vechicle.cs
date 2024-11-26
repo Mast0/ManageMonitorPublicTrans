@@ -12,12 +12,14 @@ namespace Data.Entites
 
 		public string Type { get; set; }
 
+		public int LocationId { get; set; }
+
 		public Coordinates Location { get; set; }
 
 		public int RouteId { get; set; }
 
 		public Route Route { get; set; }
 
-		public ICollection<RoutePoint> History { get; set; }
+		public IEnumerable<RoutePoint> History { get; set; }
 	}
 }
